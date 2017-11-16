@@ -16,5 +16,6 @@ docker service create \
 --env PG_DATABASE=userdb \
 --env PG_MASTER_PORT=5432 \
 --env PG_MASTER_PASSWORD=password \
+--env PGDATA_PATH_OVERRIDE=persistent \
 crunchydata/crunchy-postgres-gis:centos7-10.0-1.6.0
 
