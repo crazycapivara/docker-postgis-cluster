@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+   geoserver:
+      image: kartoza/geoserver
+      ports:
+         - "48080:8080"
+      networks:
+         - fossgis_swarm
+      deploy:
+         placement:
+            constraints: [node.labels.type == master]
+
+networks:
+   fossgis_swarm:
+     external: true
+
