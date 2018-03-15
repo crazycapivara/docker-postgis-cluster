@@ -5,7 +5,7 @@ docker service create \
 --publish "5432:5432" \
 --mount type=volume,src=$MASTER_SERVICE_NAME-volume,dst=/pgdata,volume-driver=local \
 --name $MASTER_SERVICE_NAME \
---network futuregis \
+--network fossgis_swarm \
 --constraint 'node.labels.type == master' \
 --env PGHOST=/tmp \
 --env PG_USER=testuser \
